@@ -1,26 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Interactive comments section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ab367dd5ba.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 
-  <!-- Pull dynamic content from the data.json file -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="wrapper">
+    <section>
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-top">
+            <div class="card-top__img">
+              <img src="./images/avatars/image-amyrobson.png" alt="">
+            </div>
+            <p class="card-top__username">amyrobson</p>
+            <p class="card-top__time">1 month ago</p>
+          </div>
+
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem error atque
+            voluptates at esse. Excepturi suscipit beatae fugit velit nesciunt ea earum, repellendus dolor aperiam.
+          </p>
+
+          <div class="card-bottom">
+            <div class="card-bottom__votes">
+              <button class="card-bottom__votes--plus"><img src="./images/icon-plus.svg" alt=""></button>
+              <p class="card-bottom__votes-amount">12</p>
+              <button class="card-bottom__votes--minus"><img src="./images/icon-minus.svg" alt=""></button>
+            </div>
+
+            <button class="card-bottom__reply">
+              <span class="card-bottom__reply-icon"><img src="./images/icon-reply.svg" alt=""></span>
+              <p class="card-bottom__reply-text">Reply</p>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-top">
+            <div class="card-top__img">
+              <img src="./images/avatars/image-amyrobson.png" alt="">
+            </div>
+            <p class="card-top__username">amyrobson</p>
+            <p class="card-top__time">1 month ago</p>
+          </div>
+
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem error atque
+            voluptates at esse. Excepturi suscipit beatae fugit velit nesciunt ea earum, repellendus dolor aperiam.
+          </p>
+
+          <div class="card-bottom">
+            <div class="card-bottom__votes">
+              <button class="card-bottom__votes--plus"><img src="./images/icon-plus.svg" alt=""></button>
+              <p class="card-bottom__votes-amount">12</p>
+              <button class="card-bottom__votes--minus"><img src="./images/icon-minus.svg" alt=""></button>
+            </div>
+
+            <button class="card-bottom__reply">
+              <span class="card-bottom__reply-icon"><img src="./images/icon-reply.svg" alt=""></span>
+              <p class="card-bottom__reply-text">Reply</p>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-top">
+            <div class="card-top__img">
+              <img src="./images/avatars/image-amyrobson.png" alt="">
+            </div>
+            <p class="card-top__username">amyrobson</p>
+            <p class="card-top__time">1 month ago</p>
+          </div>
+
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem error atque
+            voluptates at esse. Excepturi suscipit beatae fugit velit nesciunt ea earum, repellendus dolor aperiam.
+          </p>
+
+          <div class="card-bottom">
+            <div class="card-bottom__votes">
+              <button class="card-bottom__votes--plus"><img src="./images/icon-plus.svg" alt=""></button>
+              <p class="card-bottom__votes-amount">12</p>
+              <button class="card-bottom__votes--minus"><img src="./images/icon-minus.svg" alt=""></button>
+            </div>
+
+            <button class="card-bottom__reply">
+              <span class="card-bottom__reply-icon"><img src="./images/icon-reply.svg" alt=""></span>
+              <p class="card-bottom__reply-text">Reply</p>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
   </div>
+
+
+
+  <script src="./js/main.js" defer type="module"></script>
 </body>
+
 </html>
