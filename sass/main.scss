@@ -9,6 +9,7 @@
 	flex-direction: column;
 	padding: 3em 1em;
 	gap: 1.5em;
+
 	.card {
 		display: flex;
 		justify-content: space-between;
@@ -25,11 +26,11 @@
 			gap: 1em;
 
 			&__img {
-				width: 2em;
-				height: 2em;
+				width: 2.2em;
+				height: 2.2em;
 				img {
-					width: 2em;
-					height: 2em;
+					width: 2.2em;
+					height: 2.2em;
 				}
 			}
 
@@ -48,6 +49,11 @@
 		&-text {
 			padding: 1em 0;
 			color: $grayish-blue;
+
+			&-span {
+				color: $moderate-blue;
+				font-weight: 500;
+			}
 		}
 
 		&-bottom {
@@ -91,10 +97,54 @@
 			width: 3em;
 			display: none;
 		}
+
+		&-add {
+			&-desktop {
+				display: none;
+			}
+			&-mobile {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				width: 100%;
+				gap: 1em;
+			}
+
+			&-content {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			&__img {
+				width: 2.5em;
+				height: 2.5em;
+			}
+
+			&__send {
+				padding: 0.9em 1.8em;
+				border-radius: 8px;
+				text-transform: uppercase;
+				font-weight: 700;
+				color: $white;
+				background-color: $moderate-blue;
+			}
+
+			&__textarea {
+				padding: 1em;
+				width: 100%;
+				max-width: 100%;
+				height: 8em;
+				max-height: 8em;
+				border-radius: 8px;
+				border: 1px solid $light-gray;
+			}
+		}
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 576px) {
 	.cards {
 		.card {
 			position: relative;
@@ -130,6 +180,18 @@
 					top: 2em;
 				}
 			}
+
+			&-add {
+				&-mobile {
+					display: none;
+				}
+				&-desktop {
+					display: flex;
+					align-items: flex-start;
+					gap: 1em;
+					width: 100%;
+				}
+			}
 		}
 	}
 
@@ -138,7 +200,7 @@
 		flex-direction: column;
 		gap: 1.5em;
 		align-self: flex-end;
-		max-width: 65em;
+		max-width: 50em;
 		border-left: 3px solid $light-gray;
 		padding: 0 0 0 3em;
 	}
