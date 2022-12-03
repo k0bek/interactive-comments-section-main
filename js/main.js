@@ -1,3 +1,8 @@
+import { Button } from "./components/Button.js";
+import { CardVotesAmount } from "./components/CardVotesAmount.js";
+import { ParagraphText } from "./components/CardText.js";
+import { Image } from "./components/Image.js";
+
 const cardsSection = document.querySelector(".cards");
 
 const fetchJSON = async function () {
@@ -25,54 +30,64 @@ async function getResponse() {
 	return currentUser, comments;
 }
 
-// async function initializeComments() {
-// 	const commentsInformations = await getResponse();
+async function initializeComments() {
+	const commentsInformations = await getResponse();
 
-// 	for (const commentInfo of commentsInformations) {
-// 		const comment = document.createElement("div");
-// 		comment.classList.add("card");
-// 		cardsSection.append(comment);
-// 		comment.innerHTML = `
-// 		<div class="card__votes desktop">
-// 		<button class="card__votes--plus"><img src="./images/icon-plus.svg" alt=""></button>
-// 		<p class="card__votes-amount">12</p>
-// 		<button class="card__votes--minus"><img src="./images/icon-minus.svg" alt=""></button>
-// 	  </div>
+	for (const commentInfo of commentsInformations) {
+		const comment = document.createElement("div");
+		comment.classList.add("card");
+		comment.id = commentInfo.id;
+		cardsSection.append(comment);
+		comment.innerHTML = `
+		<div class="card__votes desktop">
 
-// 	  <div class="card-content">
-// 		<div class="card-top">
-// 		  <div class="card-top__img">
-// 			<img src="./images/avatars/image-amyrobson.png" alt="">
-// 		  </div>
-// 		  <p class="card-top__username">amyrobson</p>
-// 		  <p class="card-top__time">1 month ago</p>
-// 		</div>
+		${Button("./images/icon-plus.svg", "card__votes--plus")}
+		
+          ${CardVotesAmount(commentInfo.score)}
+          ${Button("./images/icon-minus.svg", "card__votes--minus")}
+        </div>
 
-// 		<p class="card-text">${commentInfo.content}
-// 		</p>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-top__img">
+              ${Image(commentInfo.user.image.png)}
+            </div>
+            ${ParagraphText("card-top__username", commentInfo.user.username)}
+            ${ParagraphText("card-top__time", commentInfo.createdAt)}
+          </div>
 
-// 		<div class="card-bottom">
-// 		  <div class="card__votes mobile">
-// 			<button class="card__votes--plus"><img src="./images/icon-plus.svg" alt=""></button>
-// 			<p class="card__votes-amount">12</p>
-// 			<button class="card__votes--minus"><img src="./images/icon-minus.svg" alt=""></button>
-// 		  </div>
+          ${ParagraphText("card-text", commentInfo.content)}
+          
 
-// 		  <button class="card-bottom__reply">
-// 			<span class="card-bottom__reply-icon"><img src="./images/icon-reply.svg" alt=""></span>
-// 			<p class="card-bottom__reply-text">Reply</p>
-// 		  </button>
-// 		</div>
-// 	  </div>
+          <div class="card-bottom">
+            <div class="card__votes mobile">
+			${Button("./images/icon-plus.svg", "card__votes--plus")}
+			  ${CardVotesAmount(commentInfo.score)}
+			  ${Button("./images/icon-minus.svg", "card__votes--minus")}
 
-// 		`;
+            </div>
 
-// 		const commentInfoArr = commentInfo.replies;
+            ${Button(
+							"./images/icon-reply.svg",
+							"card-bottom__reply",
+							ParagraphText("card-bottom__reply-text", "Reply")
+						)}
+          </div>
+        </div>
 
-// 		if (commentInfoArr.length !== 0) {
-// 			console.log(commentInfoArr);
-// 		}
-// 	}
-// }
+		`;
 
-initializeComments();
+		const commentInfoReplies = commentInfo.replies;
+
+		if (commentInfoReplies.length !== 0) {
+			return commentInfoReplies;
+		}
+	}
+}
+
+const initializeRepliesComments = async function () {
+	const initialized = await initializeComments();
+	console.log(initialized);
+};
+
+initializeRepliesComments();
