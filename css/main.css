@@ -48,7 +48,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 3em 1em;
+  padding: 2em 1em;
   gap: 1.5em;
   width: 80%;
 }
@@ -181,6 +181,12 @@ button {
   display: none;
 }
 
+.cards .card-add {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
 .cards .card-add-desktop {
   display: none;
 }
@@ -248,7 +254,18 @@ button {
   color: white;
 }
 
-@media (min-width: 600px) {
+.cards .answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+}
+
+@media (min-width: 768px) {
   .cards .card {
     position: relative;
     display: -webkit-box;
